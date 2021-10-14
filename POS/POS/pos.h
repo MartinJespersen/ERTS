@@ -85,6 +85,7 @@ pos<_m_particles, _n_dimensions>::pos(double (*objective_function)(double*), int
 template<size_t _m_particles, size_t _n_dimensions>
 double * pos<_m_particles, _n_dimensions>::pos_start()
 {
+    // Black magic
     for (int i = 0; i < _stop; i++) {
         populate_matrix(&r[0][0], 0, 1);
         populate_matrix(&s[0][0], 0, 1);
