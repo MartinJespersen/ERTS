@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="pos.cpp" path="C:\Users\Trill\source\repos\SystemCStarter\POS_SYSTEMC\pos.cpp"/>
+    <originFiles name="pos.h" path="C:\Users\Trill\source\repos\SystemCStarter\POS_SYSTEMC\pos.h"/>
+    <originFiles name="pos_module.cpp" path="C:\Users\Trill\source\repos\SystemCStarter\POS_SYSTEMC\pos_module.cpp"/>
+    <originFiles name="pos_module.h" path="C:\Users\Trill\source\repos\SystemCStarter\POS_SYSTEMC\pos_module.h"/>
+  </source>
+  <testbench>
+    <originFiles name="main.cpp" path="C:\Users\Trill\source\repos\SystemCStarter\POS_SYSTEMC\main.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

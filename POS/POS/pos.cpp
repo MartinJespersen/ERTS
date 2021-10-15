@@ -2,8 +2,7 @@
 
 
 template<size_t _m_particles, size_t _n_dimensions>
-pos<_m_particles, _n_dimensions>::pos(double (*objective_function)(double*), int stop_criteria, int _w, int _c1, int _c2, int from, int to) :
-    _objective_function(objective_function),
+pos<_m_particles, _n_dimensions>::pos(const int stop_criteria, const int _w, const int _c1, const int _c2, int from, int to) :
     _stop(stop_criteria),
     _w(_w),
     _c1(_c1),
@@ -24,7 +23,7 @@ pos<_m_particles, _n_dimensions>::pos(double (*objective_function)(double*), int
     double temp_objective_value = 0;
     double current_best_value = std::numeric_limits<double>::max();
     for (int i = 0; i < _m_particles; i++) {
-        temp_objective_value = _objective_function(x[i]);
+        temp_objective_value = objective_function(x[i]);
         if (temp_objective_value < current_best_value) {
             index_global_best = i;
             current_best_value = temp_objective_value;
@@ -35,13 +34,14 @@ pos<_m_particles, _n_dimensions>::pos(double (*objective_function)(double*), int
         g[i] = x[index_global_best][i];
     }
     display_vector("Initial Global Best", g);
+
+    // Start simulation.
+    pos_start();
 }
 
 template<size_t _m_particles, size_t _n_dimensions>
 double* pos<_m_particles, _n_dimensions>::pos_start()
 {
-    high_res_time start = std::chrono::high_resolution_clock::now();
-
     for (int i = 0; i < _stop; i++) {
         populate_matrix(&r[0][0], 0, 1);
         populate_matrix(&s[0][0], 0, 1);
@@ -53,13 +53,13 @@ double* pos<_m_particles, _n_dimensions>::pos_start()
         }
 
         for (int m = 0; m < _m_particles; m++) {
-            if (_objective_function(x[m]) < _objective_function(p[m])) {
+            if (objective_function(x[m]) < objective_function(p[m])) {
                 for (int n = 0; n < _n_dimensions; n++) {
                     p[m][n] = x[m][n];
                 }
             }
 
-            if (_objective_function(x[m]) < _objective_function(g)) {
+            if (objective_function(x[m]) < objective_function(g)) {
                 for (int n = 0; n < _n_dimensions; n++) {
                     g[n] = x[m][n];
                 }
@@ -67,11 +67,7 @@ double* pos<_m_particles, _n_dimensions>::pos_start()
         }
     }
 
-    high_res_time stop = std::chrono::high_resolution_clock::now(); 
-
     display_vector("Final Global Best", g);
-    std::chrono::milliseconds duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
-    std::cout << "Execution time: " << duration.count() << " ms" << std::endl;
 
     return g;
 }
@@ -83,6 +79,13 @@ double pos<_m_particles, _n_dimensions>::uniform_random(double from, double to)
     std::mt19937 rng(dev());
     std::uniform_real_distribution<double> dist6(from, to);
     return dist6(rng);
+}
+
+template<size_t _m_particles, size_t _n_dimensions>
+double pos<_m_particles, _n_dimensions>::objective_function(double* x)
+{
+    const double e = std::exp(1.0);
+    return 3 * pow(1 - x[0], 2) * exp(pow(-x[0], 2) - pow(x[1] + 1, 2)) - 10 * (x[0] / 5 - pow(x[0], 3) - pow(x[1], 5)) * exp(-pow(x[0], 2) - pow(x[1], 2)) - (exp(-pow(x[0] + 1, 2) - pow(x[1], 2))) / 3;
 }
 
 template<size_t _m_particles, size_t _n_dimensions>
@@ -120,4 +123,4 @@ void pos<_m_particles, _n_dimensions>::display_vector(const std::string& vector_
 }
 
 // This is needed for the C++ linker. 
-template class pos<20,2>; 
+template class pos<20, 2>;

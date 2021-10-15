@@ -49,8 +49,7 @@ int main()
     const double c1 = 1.95;
     const double c2 = 1.98;
 
-    pos<m_particles, n_dimensions> pos_obj(objective_function, stopping_criteria, w, c1, c2, from, to);
-	double * g_final_vect = pos_obj.pos_start(); 
+    pos<m_particles, n_dimensions> pos_obj(stopping_criteria, w, c1, c2, from, to);
 
 	// Rows represent particles 
 	// Columns represent particle position or velocity
