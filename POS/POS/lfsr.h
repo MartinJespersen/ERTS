@@ -6,10 +6,7 @@
 class lfsr
 {
 public:
-	double generate_random(double from, double to); 
-private:
-	unsigned int pseudo_random(unsigned
-		int seed, int load);
+	unsigned int pseudo_random(unsigned int seed);
 	double uniform_random(double from, double to); 
 };
 
