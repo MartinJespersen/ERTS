@@ -40,7 +40,8 @@ pos<_m_particles, _n_dimensions>::pos(double (*objective_function)(double*), int
 template<size_t _m_particles, size_t _n_dimensions>
 double* pos<_m_particles, _n_dimensions>::pos_start()
 {
-    // Black magic.
+    high_res_time start = std::chrono::high_resolution_clock::now();
+
     for (int i = 0; i < _stop; i++) {
         populate_matrix(&r[0][0], 0, 1);
         populate_matrix(&s[0][0], 0, 1);
@@ -66,7 +67,11 @@ double* pos<_m_particles, _n_dimensions>::pos_start()
         }
     }
 
+    high_res_time stop = std::chrono::high_resolution_clock::now(); 
+
     display_vector("Final Global Best", g);
+    std::chrono::milliseconds duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+    std::cout << "Execution time: " << duration.count() << " ms" << std::endl;
 
     return g;
 }

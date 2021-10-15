@@ -6,6 +6,9 @@
 #include <string>
 #include <cmath>
 #include <limits.h>
+#include <chrono>
+
+typedef std::chrono::time_point<std::chrono::high_resolution_clock> high_res_time;
 
 template<size_t _m_particles, size_t _n_dimensions>
 class partical_swarm_debug_data
@@ -43,5 +46,5 @@ private:
 	void populate_matrix(double * mat, double from, double to);
     void display_matrix(const std::string& matrix_name, double* mat);
     void display_vector(const std::string& vector_name, double* vect);
-	double uniform_random(double from, double to); 
+    double uniform_random(double from, double to); 
 };

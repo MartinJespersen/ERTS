@@ -55,66 +55,66 @@ int main()
 	// Rows represent particles 
 	// Columns represent particle position or velocity
 	// i.e. x[0][0] will return the position of particle 0. 
-	double v[m_particles][n_dimensions];
-	double x[m_particles][n_dimensions];
-	double g[n_dimensions];
-	double r[m_particles][n_dimensions];
-	double s[m_particles][n_dimensions];
+	//double v[m_particles][n_dimensions];
+	//double x[m_particles][n_dimensions];
+	//double g[n_dimensions];
+	//double r[m_particles][n_dimensions];
+	//double s[m_particles][n_dimensions];
 
-	populate_matrix(&x[0][0], m_particles, n_dimensions, from, to);
-	display_matrix(&x[0][0], m_particles, n_dimensions);
-	std::cout << std::endl;
-	populate_matrix(&v[0][0], m_particles, n_dimensions, from, to);
-	double p[m_particles][n_dimensions];
-	memcpy(p, x, m_particles * n_dimensions * sizeof(double));
-	std::cout << std::endl;
-	display_matrix(&p[0][0], m_particles, n_dimensions);
-	std::cout << std::endl;
-	display_matrix(&v[0][0], m_particles, n_dimensions);
+	//populate_matrix(&x[0][0], m_particles, n_dimensions, from, to);
+	//display_matrix(&x[0][0], m_particles, n_dimensions);
+	//std::cout << std::endl;
+	//populate_matrix(&v[0][0], m_particles, n_dimensions, from, to);
+	//double p[m_particles][n_dimensions];
+	//memcpy(p, x, m_particles * n_dimensions * sizeof(double));
+	//std::cout << std::endl;
+	//display_matrix(&p[0][0], m_particles, n_dimensions);
+	//std::cout << std::endl;
+	//display_matrix(&v[0][0], m_particles, n_dimensions);
 
-	for (int j = 0; j < n_dimensions; j++) {
-		g[j] = x[0][j];
-	}
+	//for (int j = 0; j < n_dimensions; j++) {
+	//	g[j] = x[0][j];
+	//}
 
-	for (int i = 0; i < m_particles; i++) {
-		if (objective_function(x[i]) < objective_function(p[i])) {
-			for (int j = 0; j < n_dimensions; j++) {
-				g[j] = x[i][j];
-			}
-		}
-	}
-	std::cout << std::endl;
-	std::cout << g[0] << "," << g[1] << std::endl;
-	for (int i = 0; i < stopping_criteria; i++) {
-		populate_matrix(&r[0][0], m_particles, n_dimensions, 0, 1);
-		populate_matrix(&s[0][0], m_particles, n_dimensions, 0, 1);
-		for (int m = 0; m < m_particles; m++) {
-			for (int n = 0; n < n_dimensions; n++) {
-				v[m][n] = w * v[m][n] + c1 * r[m][n] * (p[m][n] - x[m][n]) + c2 * s[m][n] * (g[n] - x[m][n]);
-				x[m][n] = x[m][n] + v[m][n];
-			}
-		}
+	//for (int i = 0; i < m_particles; i++) {
+	//	if (objective_function(x[i]) < objective_function(p[i])) {
+	//		for (int j = 0; j < n_dimensions; j++) {
+	//			g[j] = x[i][j];
+	//		}
+	//	}
+	//}
+	//std::cout << std::endl;
+	//std::cout << g[0] << "," << g[1] << std::endl;
+	//for (int i = 0; i < stopping_criteria; i++) {
+	//	populate_matrix(&r[0][0], m_particles, n_dimensions, 0, 1);
+	//	populate_matrix(&s[0][0], m_particles, n_dimensions, 0, 1);
+	//	for (int m = 0; m < m_particles; m++) {
+	//		for (int n = 0; n < n_dimensions; n++) {
+	//			v[m][n] = w * v[m][n] + c1 * r[m][n] * (p[m][n] - x[m][n]) + c2 * s[m][n] * (g[n] - x[m][n]);
+	//			x[m][n] = x[m][n] + v[m][n];
+	//		}
+	//	}
 
-		/*for (int m = 0; m < m_particles; m++) {
-			for (int n = 0; n < n_dimensions; n++) {
-				x[m][n] = x[m][n] + v[m][n];
-			}
-		}*/
-		for (int m = 0; m < m_particles; m++) {
-			if (objective_function(x[m]) < objective_function(p[m])) {
-				for (int n = 0; n < n_dimensions; n++) {
-					p[m][n] = x[m][n];
-				}
-			}
+	//	/*for (int m = 0; m < m_particles; m++) {
+	//		for (int n = 0; n < n_dimensions; n++) {
+	//			x[m][n] = x[m][n] + v[m][n];
+	//		}
+	//	}*/
+	//	for (int m = 0; m < m_particles; m++) {
+	//		if (objective_function(x[m]) < objective_function(p[m])) {
+	//			for (int n = 0; n < n_dimensions; n++) {
+	//				p[m][n] = x[m][n];
+	//			}
+	//		}
 
-			if (objective_function(x[m]) < objective_function(g)) {
-				for (int n = 0; n < n_dimensions; n++) {
-					g[n] = x[m][n];
-				}
-			}
-		}
-	}
+	//		if (objective_function(x[m]) < objective_function(g)) {
+	//			for (int n = 0; n < n_dimensions; n++) {
+	//				g[n] = x[m][n];
+	//			}
+	//		}
+	//	}
+	//}
 
-	std::cout << "(" << g[0] << ", " << g[1] << ")" << std::endl;
+	//std::cout << "(" << g[0] << ", " << g[1] << ")" << std::endl;
 
 };
