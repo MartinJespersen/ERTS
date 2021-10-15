@@ -139,10 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="lfsr.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pos.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="fixed_point.h" />
+    <ClInclude Include="lfsr.h" />
     <ClInclude Include="pos.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
