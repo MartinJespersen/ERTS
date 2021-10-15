@@ -21,15 +21,9 @@
     <ClCompile Include="pos.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lfsr.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pos.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="lfsr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="fixed_point.h">
