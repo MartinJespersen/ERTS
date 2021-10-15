@@ -1,7 +1,7 @@
 #pragma once
 // Inspired by: https://embeddedartistry.com/blog/2018/07/12/simple-fixed-point-conversion-in-c/
-#define FIXED_FRACT_BITS 16
-typedef int fixed_point_t;
+#define FIXED_FRACT_BITS 8
+typedef uint16_t fixed_point_t;
 typedef double convert_float_t; 
 
 /* Fixed Point Format Using Q
@@ -32,11 +32,9 @@ fixed_point_t add_float(fixed_point_t input, convert_float_t val)
 }
 
 // Closest to PI using Q format
-// Must be function instead of const variable in Contiki for some reason.
-// Why you might ask? Because Contiki sucks. 
 fixed_point_t get_pi_fixed()
 {
-	float M_PI = 3.14159265358979323846;
+	const float M_PI = 3.14159265358979323846;
 	return (fixed_point_t)(M_PI * (1UL << FIXED_FRACT_BITS));
 }
 
