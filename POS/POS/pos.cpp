@@ -41,10 +41,18 @@ template<size_t _m_particles, size_t _n_dimensions>
 double* pos<_m_particles, _n_dimensions>::pos_start()
 {
     high_res_time start = std::chrono::high_resolution_clock::now();
+    double global_objective_function_res = _objective_function(g);
+    double local_objective_function_res[_m_particles];
+    double x_objective_function_res;
 
     for (int i = 0; i < _stop; i++) {
         populate_matrix(&r[0][0], 0, 1);
         populate_matrix(&s[0][0], 0, 1);
+        if (i == 0) {
+            for (int j = 0; j < _m_particles; j++) {
+                local_objective_function_res[j] = _objective_function(x[0]);
+            }
+        }
         for (int m = 0; m < _m_particles; m++) {
             for (int n = 0; n < _n_dimensions; n++) {
                 v[m][n] = _w * v[m][n] + _c1 * r[m][n] * (p[m][n] - x[m][n]) + _c2 * s[m][n] * (g[n] - x[m][n]);
@@ -53,17 +61,22 @@ double* pos<_m_particles, _n_dimensions>::pos_start()
         }
 
         for (int m = 0; m < _m_particles; m++) {
-            if (_objective_function(x[m]) < _objective_function(p[m])) {
+            x_objective_function_res = _objective_function(x[m]);
+            if (x_objective_function_res < local_objective_function_res[m]) {
                 for (int n = 0; n < _n_dimensions; n++) {
                     p[m][n] = x[m][n];
                 }
-            }
+                local_objective_function_res[m] = _objective_function(x[m]);
 
-            if (_objective_function(x[m]) < _objective_function(g)) {
-                for (int n = 0; n < _n_dimensions; n++) {
-                    g[n] = x[m][n];
+                if (x_objective_function_res < global_objective_function_res) {
+                    for (int n = 0; n < _n_dimensions; n++) {
+                        g[n] = x[m][n];
+                    }
+                    global_objective_function_res = _objective_function(g);
                 }
             }
+
+            
         }
     }
 

@@ -52,6 +52,7 @@ int main()
     pos<m_particles, n_dimensions> pos_obj(objective_function, stopping_criteria, w, c1, c2, from, to);
 	double * g_final_vect = pos_obj.pos_start(); 
 
+	
 	// Rows represent particles 
 	// Columns represent particle position or velocity
 	// i.e. x[0][0] will return the position of particle 0. 
