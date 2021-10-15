@@ -6,6 +6,9 @@
 #include <string>
 #include <cmath>
 #include <limits>
+#include <chrono>
+
+typedef std::chrono::time_point<std::chrono::high_resolution_clock> high_res_time;
 
 template<size_t _m_particles, size_t _n_dimensions>
 class pos
