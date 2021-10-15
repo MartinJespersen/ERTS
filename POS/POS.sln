@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "POS", "POS\POS.vcxproj", "{59A70F9A-9DC7-40B5-9EC0-A75A7079D3C5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "POS_TEST", "POS_TEST\POS_TEST.vcxproj", "{339A2953-61A2-47FB-800A-4EB4AB7D28F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{59A70F9A-9DC7-40B5-9EC0-A75A7079D3C5}.Release|x64.Build.0 = Release|x64
 		{59A70F9A-9DC7-40B5-9EC0-A75A7079D3C5}.Release|x86.ActiveCfg = Release|Win32
 		{59A70F9A-9DC7-40B5-9EC0-A75A7079D3C5}.Release|x86.Build.0 = Release|Win32
+		{339A2953-61A2-47FB-800A-4EB4AB7D28F2}.Debug|x64.ActiveCfg = Debug|x64
+		{339A2953-61A2-47FB-800A-4EB4AB7D28F2}.Debug|x64.Build.0 = Debug|x64
+		{339A2953-61A2-47FB-800A-4EB4AB7D28F2}.Debug|x86.ActiveCfg = Debug|Win32
+		{339A2953-61A2-47FB-800A-4EB4AB7D28F2}.Debug|x86.Build.0 = Debug|Win32
+		{339A2953-61A2-47FB-800A-4EB4AB7D28F2}.Release|x64.ActiveCfg = Release|x64
+		{339A2953-61A2-47FB-800A-4EB4AB7D28F2}.Release|x64.Build.0 = Release|x64
+		{339A2953-61A2-47FB-800A-4EB4AB7D28F2}.Release|x86.ActiveCfg = Release|Win32
+		{339A2953-61A2-47FB-800A-4EB4AB7D28F2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
