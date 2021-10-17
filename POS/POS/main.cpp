@@ -12,21 +12,6 @@ int main()
     const double c1 = 1.95;
     const double c2 = 1.98;
 
-    /*int min = 0;
-    int max = 7; 
-    std::cout.precision(5); 
-    random_generator r_gen{};
-    for (int i = 0; i < 100; i++)
-    {
-        double value = r_gen.nextRand(min, max);
-        //std::cout << "Value: " << value << std::endl; 
-
-        if (value > max || value < min)
-        {
-            std::cout << "ERROR!" << std::endl; 
-        }
-    }*/
-
     pos<m_particles, n_dimensions> pos_obj(stopping_criteria, w, c1, c2, from, to);
 
     return 0;
