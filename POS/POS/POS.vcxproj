@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pos.cpp" />
+    <ClCompile Include="random_generator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fixed_point.h" />
     <ClInclude Include="pos.h" />
+    <ClInclude Include="random_generator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

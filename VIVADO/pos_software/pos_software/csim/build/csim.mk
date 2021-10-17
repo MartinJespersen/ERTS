@@ -19,7 +19,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../../../../../../source/repos/SystemCStarter/POS_SYSTEMC/main.cpp ../../../../../../../../../source/repos/SystemCStarter/POS_SYSTEMC/pos.cpp ../../../../../../../../../source/repos/SystemCStarter/POS_SYSTEMC/pos_module.cpp
+HLS_SOURCES = ../../../../../POS/POS/main.cpp ../../../../../POS/POS/pos.cpp ../../../../../POS/POS/random_generator.cpp
 
 TARGET := csim.exe
 
@@ -69,20 +69,20 @@ all: $(TARGET)
 
 
 
-$(ObjDir)/main.o: ../../../../../../../../../source/repos/SystemCStarter/POS_SYSTEMC/main.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../../../../../../source/repos/SystemCStarter/POS_SYSTEMC/main.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/main.o: ../../../../../POS/POS/main.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../../POS/POS/main.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/main.d
 
-$(ObjDir)/pos.o: ../../../../../../../../../source/repos/SystemCStarter/POS_SYSTEMC/pos.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../../../../../../source/repos/SystemCStarter/POS_SYSTEMC/pos.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/pos.o: ../../../../../POS/POS/pos.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../../POS/POS/pos.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/pos.d
 
-$(ObjDir)/pos_module.o: ../../../../../../../../../source/repos/SystemCStarter/POS_SYSTEMC/pos_module.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../../../../../../source/repos/SystemCStarter/POS_SYSTEMC/pos_module.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/random_generator.o: ../../../../../POS/POS/random_generator.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../../POS/POS/random_generator.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
--include $(ObjDir)/pos_module.d
+-include $(ObjDir)/random_generator.d

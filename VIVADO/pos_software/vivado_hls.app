@@ -1,10 +1,10 @@
-<project xmlns="com.autoesl.autopilot.project" top="pos&lt;20,2&gt;" name="pos_software">
+<project xmlns="com.autoesl.autopilot.project" name="pos_software" top="pos&lt;20,2&gt;">
     <files>
-        <file name="../../../../../source/repos/SystemCStarter/POS_SYSTEMC/pos.cpp" sc="0" tb="false" cflags=""/>
-        <file name="../../../../../source/repos/SystemCStarter/POS_SYSTEMC/pos.h" sc="0" tb="false" cflags=""/>
-        <file name="../../../../../source/repos/SystemCStarter/POS_SYSTEMC/pos_module.cpp" sc="0" tb="false" cflags=""/>
-        <file name="../../../../../source/repos/SystemCStarter/POS_SYSTEMC/pos_module.h" sc="0" tb="false" cflags=""/>
-        <file name="../../../../../../../source/repos/SystemCStarter/POS_SYSTEMC/main.cpp" sc="0" tb="1" cflags=""/>
+        <file name="../../../POS/POS/main.cpp" sc="0" tb="1" cflags=""/>
+        <file name="../POS/POS/pos.cpp" sc="0" tb="false" cflags=""/>
+        <file name="../POS/POS/pos.h" sc="0" tb="false" cflags=""/>
+        <file name="../POS/POS/random_generator.cpp" sc="0" tb="false" cflags=""/>
+        <file name="../POS/POS/random_generator.h" sc="0" tb="false" cflags=""/>
     </files>
     <includePaths/>
     <libraryPaths/>
