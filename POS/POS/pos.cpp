@@ -8,7 +8,7 @@ pos<_m_particles, _n_dimensions>::pos(const int stop_criteria, const int _w, con
 	_c1(_c1),
 	_c2(_c2)
 {
-	// Generate inital positions. 
+	// Generate initial positions.
 	populate_matrix(&x[0][0], from, to);
 	populate_matrix(&v[0][0], from, to);
 	display_matrix("Initial Position matrix", &x[0][0]);
