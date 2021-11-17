@@ -18,6 +18,7 @@ double random_generator::nextRand()
 	return value;
 }
 
+// Generates a pseudo random number between [from, to]
 double random_generator::nextRand(const int from, const int to)
 {
 	int offset = (std::abs(from) + std::abs(to) - std::abs(to));
