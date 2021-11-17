@@ -1,7 +1,7 @@
 #pragma once
 // Inspired by: https://embeddedartistry.com/blog/2018/07/12/simple-fixed-point-conversion-in-c/
-#define FIXED_FRACT_BITS 8
-typedef uint16_t fixed_point_t;
+#define FIXED_FRACT_BITS 16
+typedef int fixed_point_t;
 typedef double convert_float_t; 
 
 /* Fixed Point Format Using Q
