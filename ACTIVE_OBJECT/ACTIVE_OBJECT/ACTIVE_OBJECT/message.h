@@ -1,11 +1,13 @@
 #pragma once 
-#define N 2 
+#include <iostream>
+const int N =  2;
+
 
 class message 
 {
 public:
     message(float g[N]) {
-        for(size_t i = 0; i<N; i++)
+        for(int i = 0; i<N; i++)
             _g[i] = g[i];
     } 
     void print(); 

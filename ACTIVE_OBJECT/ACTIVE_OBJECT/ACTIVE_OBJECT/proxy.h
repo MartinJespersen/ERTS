@@ -7,7 +7,7 @@
 class proxy
 {
 public:
-	proxy(size_t size); 
+	proxy(size_t size): _scheduler(size){} 
 	message_future execute_pos_sw();
 	message_future execute_pos_hw();
 private:

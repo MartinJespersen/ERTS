@@ -1,5 +1,5 @@
-#pragma once 
 #include "proxy.h"
+
 
 int main() {
     proxy px(10); 

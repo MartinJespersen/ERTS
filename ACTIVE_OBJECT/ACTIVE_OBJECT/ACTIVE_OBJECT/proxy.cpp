@@ -1,10 +1,5 @@
 #include "proxy.h"
 
-proxy::proxy(size_t size) :
-    _scheduler(size)
-{
-}
-
 message_future proxy::execute_pos_sw() 
 {
     message_future result; 
