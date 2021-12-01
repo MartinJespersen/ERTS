@@ -4,7 +4,6 @@
 #include "queue_impl.h"
 class queue{
 public:
-    queue() = default;
     queue(size_t size);
     void put(method_request* mes);
     method_request* remove();

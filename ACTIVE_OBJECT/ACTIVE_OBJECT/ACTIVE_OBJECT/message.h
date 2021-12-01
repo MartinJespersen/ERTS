@@ -4,7 +4,10 @@
 class message 
 {
 public:
-    message(float g[N]) : _g(g) {} 
+    message(float g[N]) {
+        for(size_t i = 0; i<N; i++)
+            _g[i] = g[i];
+    } 
     void print(); 
 private: 
     float _g[N]; 
