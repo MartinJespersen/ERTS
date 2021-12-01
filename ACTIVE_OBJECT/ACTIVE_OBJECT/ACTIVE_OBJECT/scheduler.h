@@ -9,7 +9,7 @@ protected:
     virtual void dispatch();
 private:
     int _ret;
-    queue * _queue;
+    queue _queue;
     pthread_t _thread;
 
     static void *svc_run(void *args);

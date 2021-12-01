@@ -1,8 +1,9 @@
 #pragma once
 #include "message_future.h"
-#include "message_request.h"
+#include "method_request.h"
 #include "servant.h"
 #include "scheduler.h"
+
 class proxy
 {
 public:
@@ -11,7 +12,7 @@ public:
 	message_future execute_pos_hw();
 private:
 	servant _servant; 
-	scheduler _scheduler
+	scheduler _scheduler;
 };
 
 

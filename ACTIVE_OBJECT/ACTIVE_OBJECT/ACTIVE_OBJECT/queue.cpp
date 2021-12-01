@@ -1,9 +1,5 @@
 #include "queue.h"
 
-queue::queue(size_t size){
-    _impl = queue_impl(size);
-}
-
 void queue::put(method_request * mes){
     pthread_mutex_lock(&_mut);
 
