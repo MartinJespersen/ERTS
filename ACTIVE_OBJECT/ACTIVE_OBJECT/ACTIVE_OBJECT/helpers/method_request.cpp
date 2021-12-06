@@ -15,7 +15,7 @@ bool get_by_software::can_run() const
 
 void get_by_software::call() 
 {
-	_result = message_future(_servant->get_global_best<system_type::SOFTWARE>()); 
+	_result = message_future(_servant->get_global_best_sw()); 
 }
 
 /*     BY HARDWARE     */
@@ -33,5 +33,5 @@ bool get_by_hardware::can_run() const
 
 void get_by_hardware::call() 
 {
-	_result = message_future(_servant->get_global_best<system_type::HARDWARE>()); 
+	_result = message_future(_servant->get_global_best_hw()); 
 }

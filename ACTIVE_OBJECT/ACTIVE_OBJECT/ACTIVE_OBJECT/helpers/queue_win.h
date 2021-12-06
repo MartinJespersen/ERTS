@@ -5,10 +5,12 @@
 #include <deque>
 class queue_win: public queue_impl{
 public:
+    queue_win(size_t max_size);
     void put(method_request * m) override;
     method_request * remove() override;
-    unsigned int size() const override;
-    unsigned int get_max_size() override; 
+    size_t size() const override;
+    size_t get_max_size() override; 
 private:
     std::deque<method_request *> _queue;
+    size_t _max_size;
 };

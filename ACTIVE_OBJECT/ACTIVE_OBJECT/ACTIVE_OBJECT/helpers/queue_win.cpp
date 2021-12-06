@@ -1,4 +1,6 @@
 #include "queue_win.h"
+queue_win::queue_win(size_t max_size): _max_size(max_size){}
+
 void queue_win::put(method_request * m) {
     _queue.push_back(m);
 }
@@ -8,10 +10,10 @@ method_request * queue_win::remove(){
     _queue.pop_front();
     return i;
 }
-unsigned int queue_win::size() const{
+size_t queue_win::size() const{
     return _queue.size();
 }
 
-unsigned int queue_win::get_max_size() {
+size_t queue_win::get_max_size() {
     return _max_size;
 }

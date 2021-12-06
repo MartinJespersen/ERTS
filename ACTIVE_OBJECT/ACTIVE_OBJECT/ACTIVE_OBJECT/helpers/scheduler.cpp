@@ -1,6 +1,7 @@
 #include "scheduler.h"
 #include "pthread.h"
-scheduler::scheduler(size_t size): _queue(queue(size))
+
+scheduler::scheduler(size_t size): _queue(size)
 {
     _ret = pthread_create(&_thread, NULL, svc_run, (void*)this);
 }
