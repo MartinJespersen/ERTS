@@ -359,3 +359,11 @@ VIVADO_HLS/
 .VIVADO_HLS 
 /pos_software
 /pos_software_vivado
+
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+install_manifest.txt
+CLION/cmake-build-debug/
+CLION/.idea/

@@ -1,0 +1,3 @@
+C:/Users/Trill/Desktop/ERTS_NEW/ERTS/CLION/cmake-build-debug/CMakeFiles/CLION.dir
+C:/Users/Trill/Desktop/ERTS_NEW/ERTS/CLION/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Trill/Desktop/ERTS_NEW/ERTS/CLION/cmake-build-debug/CMakeFiles/rebuild_cache.dir
