@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main()
+unsigned short int main()
 {
 	return 0; 
 }

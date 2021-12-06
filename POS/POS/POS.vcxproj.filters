@@ -18,21 +18,48 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pos.cpp">
+    <ClCompile Include="pos_algo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="random_generator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pos_top.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fixed_point.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="random_generator_fixed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pos_algo_fixed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pos_top_fixed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pos.h">
+    <ClInclude Include="pos_algo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="random_generator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pos_top.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="fixed_point.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="random_generator.h">
+    <ClInclude Include="random_generator_fixed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pos_algo_fixed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pos_top_fixed.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

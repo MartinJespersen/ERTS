@@ -139,14 +139,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="fixed_point.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="pos.cpp" />
+    <ClCompile Include="pos_algo.cpp" />
+    <ClCompile Include="pos_algo_fixed.cpp" />
+    <ClCompile Include="pos_top.cpp" />
+    <ClCompile Include="pos_top_fixed.cpp" />
     <ClCompile Include="random_generator.cpp" />
+    <ClCompile Include="random_generator_fixed.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fixed_point.h" />
-    <ClInclude Include="pos.h" />
+    <ClInclude Include="pos_algo.h" />
+    <ClInclude Include="pos_algo_fixed.h" />
+    <ClInclude Include="pos_top.h" />
+    <ClInclude Include="pos_top_fixed.h" />
     <ClInclude Include="random_generator.h" />
+    <ClInclude Include="random_generator_fixed.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
