@@ -41,12 +41,16 @@ message message_future::result(const int timeout) const
         sleep(0.1); 
     }   while ( msec < timeout ); 
 
-    return nullptr; 
+    float f[2] = {1,2}; 
+    return message(f); 
 }
 
 message_future::~message_future() 
 {
-    if(--_mf_impl->_count <= 0) delete _mf_impl; 
+    if(--_mf_impl->_count <= 0) 
+    {
+        delete _mf_impl; 
+    }
 }
 
 /*     BODY     */

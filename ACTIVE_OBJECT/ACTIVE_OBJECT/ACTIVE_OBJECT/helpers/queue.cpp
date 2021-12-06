@@ -1,6 +1,9 @@
 #include "queue.h"
 
 queue::queue(size_t size){
+    pthread_cond_init(&_writer_cond, NULL);
+    pthread_cond_init(&_reader_cond, NULL);
+
     _impl = new queue_win(size);
 }
 

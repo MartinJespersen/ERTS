@@ -7,7 +7,7 @@ scheduler::scheduler(size_t size): _queue(size)
 }
 
 void * scheduler::svc_run(void *args) {
-    scheduler *this_obj = static_cast<scheduler *> (args);
+    scheduler *this_obj = static_cast<scheduler*> (args);
     this_obj->dispatch(); 
 }
 
