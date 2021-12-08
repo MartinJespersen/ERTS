@@ -19,16 +19,15 @@ message_future::message_future(const message_future &f) :
 // This method is used by the servant to create the future object
 // and then afterwards use the equality operator.
 message_future::message_future(const message & msg)
+    : _mf_impl(new message_future_impl())
 {
-    message_future();
     _mf_impl->_msg = new message(msg);
 }
 
 void message_future::operator=(const message_future &f)
 {
-    f._mf_impl->_count++;
-    if(--_mf_impl->_count <= 0) delete _mf_impl;
-    _mf_impl = f._mf_impl;
+    delete _mf_impl->_msg;
+    _mf_impl->_msg = new message(*f._mf_impl->_msg);
 }
 
 message message_future::result(const int timeout) const
@@ -37,7 +36,7 @@ message message_future::result(const int timeout) const
     clock_t before = clock();
     do {
         clock_t difference = clock() - before;
-        msec = difference * 1000 / CLOCKS_PER_SEC;
+        msec = difference / CLOCKS_PER_SEC;
 
         if (_mf_impl->_msg != nullptr)
             return *(_mf_impl->_msg);
@@ -45,7 +44,7 @@ message message_future::result(const int timeout) const
         sleep(0.1);
     }   while ( msec < timeout );
 
-    float f[2] = {1,2};
+    float f[2] = {1,6};
     return message(f);
 }
 

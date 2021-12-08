@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Trill/Desktop/ERTS_NEW/ERTS/CLION
+# Install script for directory: C:/ERTS/ERTS/CLION
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Trill/Desktop/ERTS_NEW/ERTS/CLION/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/ERTS/ERTS/CLION/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

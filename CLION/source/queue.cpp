@@ -5,9 +5,9 @@
 #include "../headers/queue.h"
 
 queue::queue(size_t size){
-    pthread_cond_init(&_writer_cond, NULL);
-    pthread_cond_init(&_reader_cond, NULL);
-
+    pthread_cond_init(&_writer_cond, nullptr);
+    pthread_cond_init(&_reader_cond, nullptr);
+    pthread_mutex_init(&_mut, nullptr);
     _impl = new queue_win(size);
 }
 

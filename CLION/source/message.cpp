@@ -4,9 +4,10 @@
 
 #include "../headers/message.h"
 
-message::message(float g[N]) {
+message::message(const float g[N]) {
     for(int i = 0; i<N; i++)
         _g[i] = g[i];
+
 }
 
 void message::print(){
@@ -16,4 +17,10 @@ void message::print(){
         std::cout << _g[i] << " ";
     }
     std::cout << std::endl;
+}
+
+message::message(const message & mes) {
+    for (int i = 0; i < N; i++){
+        _g[i] = mes._g[i];
+    }
 }

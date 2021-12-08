@@ -12,7 +12,8 @@ const int N =  2;
 class message
 {
 public:
-    message(float g[N]);
+    message(const float g[N]);
+    message(const message & msg);
     void print();
 private:
     float _g[N];

@@ -14,7 +14,7 @@ const bool servant::is_running() const
 message servant::get_global_best_sw()
 {
     std::cout << __func__ << std::endl;
-    float i[2] = {1,1};
+    float i[N] = {1,1};
     return message(i);
 }
 
@@ -22,6 +22,6 @@ message servant::get_global_best_sw()
 message servant::get_global_best_hw()
 {
     std::cout << __func__ << std::endl;
-    float i[2] = {1,1};
+    float i[N] = {1,1};
     return message(i);
 }
