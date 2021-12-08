@@ -8,6 +8,19 @@
 #include <iostream>
 const int N =  2;
 
+class timeout_exception{
+
+public:
+    timeout_exception(std::string s){
+        _message = s;
+    }
+
+    void print(){
+        std::cout << _message << std::endl;
+    }
+private:
+    std::string _message;
+};
 
 class message
 {

@@ -44,8 +44,7 @@ message message_future::result(const int timeout) const
         sleep(0.1);
     }   while ( msec < timeout );
 
-    float f[2] = {1,6};
-    return message(f);
+    throw timeout_exception("timeout has occurred in message_future");
 }
 
 message_future::~message_future()
