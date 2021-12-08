@@ -11,6 +11,7 @@
 class scheduler{
 public:
     scheduler(size_t size);
+    void join();
     void insert(method_request *mr);
 protected:
     virtual void dispatch();

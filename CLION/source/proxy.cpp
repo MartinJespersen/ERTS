@@ -11,7 +11,7 @@ message_future proxy::execute_pos_sw()
     message_future result;
     method_request * mr = new get_by_software(&_servant, result);
     _scheduler.insert(mr);
-    return result;
+    return result; // returns copy.
 }
 
 message_future proxy::execute_pos_hw()
@@ -20,4 +20,8 @@ message_future proxy::execute_pos_hw()
     method_request * mr = new get_by_hardware(&_servant, result);
     _scheduler.insert(mr);
     return result;
+}
+
+void proxy::join() {
+    _scheduler.join();
 }

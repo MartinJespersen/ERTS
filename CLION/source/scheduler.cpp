@@ -31,3 +31,7 @@ void scheduler::dispatch(){
         }
     }
 }
+
+void scheduler::join() {
+    pthread_join(_thread, NULL);
+}

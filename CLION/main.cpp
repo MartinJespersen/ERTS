@@ -10,7 +10,8 @@ int main() {
     message ms_hw = mr_hw.result(10); 
 
     ms_sw.print(); 
-    ms_hw.print(); 
+    ms_hw.print();
 
+    px.join();
     return 0; 
 }
