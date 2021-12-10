@@ -1,0 +1,23 @@
+@startuml
+skinparam Monochrome true
+title Particle Swarm Algorithm
+
+participant "Next Step Generator" as next_step
+participant "Random Generator" as rng_gen 
+participant "Objective function" as obj_func
+
+next_step -> rng_gen: Initialize particle (x) and velocity (v) vectors
+rng_gen --> next_step: x and v values
+loop N particle times
+    next_step -> rng_gen: Calculate local (r) and global (s) vector constants
+    rng_gen --> next_step: r and s values
+    next_step -> next_step: Calculate new velocity vector (v)
+    next_step -> next_step: Calculate new particle position vector (x)
+    
+    next_step -> obj_func: calculate f(x), f(p) and f(g)
+    obj_func --> next_step: f(x), f(p) and f(g)
+
+    next_step -> next_step: update local best vector (p) and global best position (g)
+end
+
+@enduml

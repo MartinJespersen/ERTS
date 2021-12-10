@@ -1,0 +1,26 @@
+@startuml
+skinparam Monochrome true
+title Particle Swarm Algorithm
+
+card pos[
+    <<block>>
+    Particle Swarm Algorithm
+]
+card rg[
+    <<block>>
+    Random Generator
+]
+card obj_func[
+    <<block>>
+    Objective function
+]
+card next_step[
+    <<block>>
+    Next step generation
+]
+
+
+rg -up-* pos
+obj_func -up-* pos
+next_step -up-* pos
+@enduml

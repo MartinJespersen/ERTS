@@ -1,0 +1,53 @@
+@startuml
+skinparam Monochrome true
+title Active Object Pattern
+
+
+class proxy{
+    +execute_pos_sw(): message_future
+    +execute_pos_hw(): message_future
+}
+class servant{
+    +get_global_best_hw(): message
+    +get_global_best_sw(): message
+}
+class scheduler{
+    +insert(method_request)
+    #dispatch()
+}
+class message_queue{
+    +put(method_request)
+    +get(): method_request
+}
+abstract class method_request{
+    +can_run(): bool
+    +call()
+}
+
+class get_by_software{}
+class get_by_hardware{}
+class message_future{
+    result(int timeout): message
+}
+class message{
+    -_global_best[N]
+    +print()
+}
+
+message_future <-up- proxy
+servant -up-* proxy
+scheduler -up-* proxy
+
+method_request <-up- scheduler
+message_queue -up-* scheduler
+
+get_by_hardware -up-|> method_request
+get_by_software -up-|> method_request
+
+message --o message_future
+method_request <-up- message_queue
+
+message_future --* method_request
+servant --o method_request
+
+@enduml
